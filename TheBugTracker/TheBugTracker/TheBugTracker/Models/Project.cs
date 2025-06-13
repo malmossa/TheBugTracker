@@ -46,6 +46,6 @@ namespace TheBugTracker.Models
 
         public virtual ICollection<ApplicationUser> Members { get; set; } = [];
 
-        // TODO: tickets
+        public virtual ICollection<Ticket> Tickets { get; set; } = [];
     }
 }
