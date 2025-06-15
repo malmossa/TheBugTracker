@@ -6,7 +6,7 @@ namespace TheBugTracker.Helpers
     {
         public static readonly string DefaultProfilePictureUrl = "/images/profile_picture.png";
 
-        public static async Task<ImageUpload> GetImageUploadAsync(IFormFile file)
+        public static async Task<FileUpload> GetImageUploadAsync(IFormFile file)
         {
             using var ms = new MemoryStream();
             await file.CopyToAsync(ms);
@@ -17,7 +17,7 @@ namespace TheBugTracker.Helpers
                 throw new Exception("The image is too large.");
             }
 
-            ImageUpload imageUpload = new()
+            FileUpload imageUpload = new()
             {
                 Id = Guid.NewGuid(),
                 Data = data,

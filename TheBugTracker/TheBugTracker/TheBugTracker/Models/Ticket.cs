@@ -51,7 +51,7 @@ namespace TheBugTracker.Models
 
         public virtual ICollection<TicketComment> Comments { get; set; } = [];
         public virtual ICollection<TicketHistory> History { get; set; } = [];
-        // TODO: history
+        public virtual ICollection<TicketAttachment> Attachments { get; set; } = [];
 
     }
 }
