@@ -92,11 +92,11 @@
             {
 
                 //save the uploaded picture
-                ImageUpload newProfilePic = await ImageHelper.GetImageUploadAsync(Input.ProfilePicture);
+                FileUpload newProfilePic = await ImageHelper.GetImageUploadAsync(Input.ProfilePicture);
                 context.Add(newProfilePic);
 
                 //delete the old picture
-                ImageUpload? oldProfilePic = await context.Images.FirstOrDefaultAsync(i => i.Id == user.ProfilePictureId);
+                FileUpload? oldProfilePic = await context.Images.FirstOrDefaultAsync(i => i.Id == user.ProfilePictureId);
 
                 if (oldProfilePic is not null)
                 {
