@@ -1,19 +1,5 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="d-flex flex-column h-100">
-    <!-- Top Nav Bar -->
-    <TopNavMenu />
-    <!-- Main Content Area -->
-    <main class="flex-grow-1">
-        @Body
-    </main>
-
-    <!-- Footer -->
-    <footer class="flex-shrink-0">
-        <Footer />
-    </footer>
-</div>
-
 @* Required *@
 <MudThemeProvider />
 <MudPopoverProvider />
@@ -24,5 +10,30 @@
 @* Needed for snackbars *@
 <MudSnackbarProvider />
 
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3">The Bug Tracker</MudText>
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        @*NavMenu*@
+    </MudDrawer>
+    <MudMainContent Class="h-100 d-flex flex-column">
+        <main class="flex-grow-1 pb-3">
+            @Body
+        </main>
+        <footer>
+            TODO: FOOTER GOES HERE
+        </footer>
+    </MudMainContent>
+</MudLayout>
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
 
 
