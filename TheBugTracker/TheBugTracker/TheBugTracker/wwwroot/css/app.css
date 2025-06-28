@@ -7,19 +7,12 @@
     --ma-title-color: var(--ma-dark-color);
 }
 
-html, body {
-    font-family: var(--ma-body-font);
-    font-size: var(--ma-font-size);
+html {
+    height: 100dvh;
+}
+
+body {
     height: 100%;
-    min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--ma-title-font);
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: var(--ma-title-font);
 }
 
 /* Default Blazor Style */
