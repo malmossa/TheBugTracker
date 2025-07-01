@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 @* Required *@
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme" />
 <MudPopoverProvider />
 
 @* Needed for dialogs *@
@@ -27,6 +27,7 @@
         </footer>
     </MudMainContent>
 </MudLayout>
+
 @code {
     bool _drawerOpen = true;
 
@@ -34,6 +35,39 @@
     {
         _drawerOpen = !_drawerOpen;
     }
+
+    private static MudTheme _theme = new MudTheme()
+    {
+        PaletteLight = new PaletteLight()
+        {
+            /* Core Colors */
+            AppbarBackground = "#2b404f",
+            Primary = "#2b404f",
+            PrimaryLighten = "#395364",
+            PrimaryDarken = "#1a2c38",
+            Secondary = "#ff993b",
+            SecondaryLighten = "#ffa93e",
+            SecondaryDarken = "#fb7e37",
+            Tertiary = "#326c6a",
+            TertiaryLighten = "#347c7a",
+            TertiaryDarken = "#2b4f4c",
+
+            /* Warning Color */
+            Warning = "#ffe600",
+            WarningLighten = "#fbf700",
+            WarningDarken = "#ffcc00",
+            WarningContrastText = "#212121",
+
+            /* Background & Grays */
+            GrayDarker = "#212121",
+            GrayDark = "rgb(88, 88, 88)",
+            GrayDefault = "rgb(144, 144, 144)",
+            GrayLight = "rgb(210, 210, 210)",
+            GrayLighter = "#dfe3e4",
+            BackgroundGray = "#dfe3e4",
+            Background = "rgb(240, 240, 240)",
+        }
+    };
 }
 
 
