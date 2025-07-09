@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TheBugTracker.Client.Models;
 
 namespace TheBugTracker.Models
 {
@@ -20,5 +21,25 @@ namespace TheBugTracker.Models
         public virtual ICollection<Project> Projects { get; set; } = [];
 
         public virtual ICollection<Invite> Invites { get; set; } = [];
+    }
+
+    public static class CompanyExtensions
+    {
+        public static CompanyDTO ToDTO(this Company company)
+        {
+            CompanyDTO dto = new CompanyDTO()
+            {
+                Name = company.Name,
+                Description = company.Description,
+                ImageUrl = company.ImageId.HasValue
+                           ? $"api/uploads/{company.ImageId}"
+                           : $"https://api.dicebear.com/9.x/glass/svg?seed={company.Name}"
+                // TODO: projects
+                // TODO: invites
+                // TODO: members
+            };
+
+            return dto;
+        }
     }
 }
