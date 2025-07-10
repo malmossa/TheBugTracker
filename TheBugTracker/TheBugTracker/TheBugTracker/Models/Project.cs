@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TheBugTracker.Client.Models;
 using TheBugTracker.Client.Models.Enums;
 
 namespace TheBugTracker.Models
@@ -47,5 +48,28 @@ namespace TheBugTracker.Models
         public virtual ICollection<ApplicationUser> Members { get; set; } = [];
 
         public virtual ICollection<Ticket> Tickets { get; set; } = [];
+    }
+
+    public static class ProjectExtensions
+    {
+        public static ProjectDTO ToDTO(this Project project)
+        {
+            ProjectDTO dto = new ProjectDTO()
+            {
+                Id = project.Id,
+                Name = project.Name,
+                Description = project.Description,
+                Created = project.Created,
+                StartDate = project.StartDate,
+                EndDate = project.EndDate,
+                Priority = project.Priority,
+                Archived = project.Archived,
+
+                // TODO: members
+                // TODO: tickets
+            };
+
+            return dto;
+        }
     }
 }
