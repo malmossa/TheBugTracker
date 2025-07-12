@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TheBugTracker.Client.Models;
 using TheBugTracker.Client.Models.Enums;
 
 namespace TheBugTracker.Models
@@ -54,4 +55,34 @@ namespace TheBugTracker.Models
         public virtual ICollection<TicketAttachment> Attachments { get; set; } = [];
 
     }
+
+    public static class TicketExtensions
+    {
+        public static TicketDTO ToDTO(this Ticket ticket)
+        {
+            TicketDTO dto = new TicketDTO()
+            {
+                Id = ticket.Id,
+                Title = ticket.Title,
+                Description = ticket.Description,
+                Created = ticket.Created,
+                Updated = ticket.Updated,
+                Archived = ticket.Archived,
+                ArchivedByProject = ticket.ArchivedByProject,
+                Priority = ticket.Priority,
+                Status = ticket.Status,
+                Type = ticket.Type,
+                ProjectId = ticket.ProjectId,
+                Project = ticket.Project?.ToDTO(),
+                SubmitterUserId = ticket.SubmitterUserId,
+                // TODO: submitter & developer user           
+                // TODO: attachments           
+                // TODO: comments           
+                // TODO: history           
+            };  
+
+            return dto;
+        }        
+    }           
+
 }

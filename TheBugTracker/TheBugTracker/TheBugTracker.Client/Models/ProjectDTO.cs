@@ -40,6 +40,6 @@ namespace TheBugTracker.Client.Models
 
         // navigation properties
         // public ICollection<ApplicationUser> Members { get; set; } = [];
-        // public ICollection<Ticket> Tickets { get; set; } = [];
+        public ICollection<TicketDTO> Tickets { get; set; } = [];
     }
 }

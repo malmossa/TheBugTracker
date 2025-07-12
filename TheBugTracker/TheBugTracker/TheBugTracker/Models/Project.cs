@@ -54,6 +54,13 @@ namespace TheBugTracker.Models
     {
         public static ProjectDTO ToDTO(this Project project)
         {
+            List<TicketDTO> ticketDTOs = [];
+
+            foreach (var ticket in project.Tickets)
+            {
+                ticket.Project = null;
+            }
+
             ProjectDTO dto = new ProjectDTO()
             {
                 Id = project.Id,
@@ -64,9 +71,9 @@ namespace TheBugTracker.Models
                 EndDate = project.EndDate,
                 Priority = project.Priority,
                 Archived = project.Archived,
-
+                Tickets = [.. project.Tickets.Select(t => t.ToDTO())]
                 // TODO: members
-                // TODO: tickets
+                
             };
 
             return dto;
