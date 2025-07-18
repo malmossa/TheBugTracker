@@ -71,9 +71,8 @@ namespace TheBugTracker.Models
                 EndDate = project.EndDate,
                 Priority = project.Priority,
                 Archived = project.Archived,
-                Tickets = [.. project.Tickets.Select(t => t.ToDTO())]
-                // TODO: members
-                
+                Tickets = [.. project.Tickets.Select(t => t.ToDTO())],
+                Members = [.. project.Members.Select(t => t.ToDTO())]                          
             };
 
             return dto;
