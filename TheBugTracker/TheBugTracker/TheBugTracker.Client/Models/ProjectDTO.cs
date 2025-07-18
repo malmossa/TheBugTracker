@@ -39,7 +39,7 @@ namespace TheBugTracker.Client.Models
         public bool Archived { get; set; } = false;
 
         // navigation properties
-        // public ICollection<ApplicationUser> Members { get; set; } = [];
+        public ICollection<UserDTO> Members { get; set; } = [];
         public ICollection<TicketDTO> Tickets { get; set; } = [];
     }
 }

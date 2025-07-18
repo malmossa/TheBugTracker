@@ -44,10 +44,10 @@ namespace TheBugTracker.Client.Models
 
         [Required]
         public string? SubmitterUserId { get; set; }
-        // TODO: public ApplicationUser? SubmitterUser { get; set; }
+        public UserDTO? SubmitterUser { get; set; }
 
         public string? DeveloperUserId { get; set; }
-        // public ApplicationUser? DeveloperUser { get; set; }
+        public UserDTO? DeveloperUser { get; set; }
 
         // public ICollection<TicketComment> Comments { get; set; } = [];
         // public ICollection<TicketHistory> History { get; set; } = [];

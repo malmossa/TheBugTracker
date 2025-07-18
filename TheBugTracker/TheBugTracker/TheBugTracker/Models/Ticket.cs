@@ -75,7 +75,10 @@ namespace TheBugTracker.Models
                 ProjectId = ticket.ProjectId,
                 Project = ticket.Project?.ToDTO(),
                 SubmitterUserId = ticket.SubmitterUserId,
-                // TODO: submitter & developer user           
+                SubmitterUser = ticket.SubmitterUser?.ToDTO(),
+                DeveloperUserId = ticket.DeveloperUserId,
+                DeveloperUser = ticket.DeveloperUser?.ToDTO(),
+                         
                 // TODO: attachments           
                 // TODO: comments           
                 // TODO: history           
