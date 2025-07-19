@@ -9,7 +9,7 @@ namespace TheBugTracker.Client.Models
 
         public required string LastName { get; set; }
 
-        public string FullNAme => $"{FirstName} {LastName}";
+        public string FullName => $"{FirstName} {LastName}";
 
         public string ImageUrl { get; set; } = $"https://api.dicebear.com/9.x/glass/svg?seed={Random.Shared.Next()}";
         
