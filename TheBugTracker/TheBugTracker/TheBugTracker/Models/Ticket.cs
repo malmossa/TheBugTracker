@@ -78,8 +78,8 @@ namespace TheBugTracker.Models
                 SubmitterUser = ticket.SubmitterUser?.ToDTO(),
                 DeveloperUserId = ticket.DeveloperUserId,
                 DeveloperUser = ticket.DeveloperUser?.ToDTO(),
+                Attachments = [.. ticket.Attachments.Select(a => a.ToDTO())]          
                          
-                // TODO: attachments           
                 // TODO: comments           
                 // TODO: history           
             };  
