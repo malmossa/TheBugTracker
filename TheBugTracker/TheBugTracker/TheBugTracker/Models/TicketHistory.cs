@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TheBugTracker.Client.Models;
 
 namespace TheBugTracker.Models
 {
@@ -19,5 +20,21 @@ namespace TheBugTracker.Models
         [Required]
         public string? UserId { get; set; }
         public virtual ApplicationUser? User { get; set; }
+    }
+
+    public static class TicketHistoryExtensions
+    {
+        public static TicketHistoryDTO ToDTO(this TicketHistory history)
+        {
+            TicketHistoryDTO dto = new TicketHistoryDTO()
+            {
+                Description = history.Description,
+                Created = history.Created,
+                UserId = history.UserId,
+                User = history.User?.ToDTO()
+            };
+
+            return dto;
+        }
     }
 }
