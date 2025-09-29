@@ -13,7 +13,8 @@ namespace TheBugTracker.Models
         public virtual ImageUpload? Image {  get; set; }
         public virtual ICollection<ApplicationUser> Members { get; set; } = [];
 
-        // TODO: many projects
+        public virtual ICollection<Project> Projects { get; set; } = [];
+
         // TODO: many invites
     }
 }
