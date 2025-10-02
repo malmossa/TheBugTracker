@@ -60,7 +60,7 @@ namespace TheBugTracker.Models
         public string? DeveloperUserId { get; set; }
         public virtual ApplicationUser? DeveloperUser { get; set; }
 
-        // TODO: comments
+        public virtual ICollection<TicketComment> Comments { get; set; } = [];
         // TODO: attachments
         // TODO: history
     }
