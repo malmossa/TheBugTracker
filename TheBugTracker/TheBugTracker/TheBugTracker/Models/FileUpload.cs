@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TheBugTracker.Models
 {
-    public class ImageUpload
+    public class FileUpload
     {
         public Guid Id { get; set; }
 
