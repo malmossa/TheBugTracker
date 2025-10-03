@@ -61,7 +61,9 @@ namespace TheBugTracker.Models
         public virtual ApplicationUser? DeveloperUser { get; set; }
 
         public virtual ICollection<TicketComment> Comments { get; set; } = [];
-        // TODO: attachments
-        // TODO: history
+        public virtual ICollection<TicketHistory> History { get; set; } = [];
+
+        public virtual ICollection<TicketAttachment> Attachments { get; set; } = [];
+        
     }
 }
