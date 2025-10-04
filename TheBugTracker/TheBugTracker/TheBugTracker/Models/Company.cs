@@ -15,6 +15,6 @@ namespace TheBugTracker.Models
 
         public virtual ICollection<Project> Projects { get; set; } = [];
 
-        // TODO: many invites
+        public virtual ICollection<Invite> Invites { get; set; } = [];
     }
 }
