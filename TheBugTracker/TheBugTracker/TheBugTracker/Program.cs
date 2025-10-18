@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 using TheBugTracker.Components;
 using TheBugTracker.Components.Account;
 using TheBugTracker.Data;
@@ -21,6 +22,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, PersistingRevalidatingAu
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+builder.Services.AddMudServices();
 builder.Services.AddOutputCache();
 
 builder.Services.AddAuthentication(options =>
